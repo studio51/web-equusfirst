@@ -1,0 +1,139 @@
+!!! 5
+
+html(lang="en")
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title EquusFirst | Freelance Ridding Instructor, Horse, Equestrian, Equine, Coach, Equine Science
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css', rel='stylesheet', type='text/css')
+    link(href='css/main.min.css', rel='stylesheet/css', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic', rel='stylesheet', type='text/css')
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+
+  body#page-top(data-spy='scroll', data-target='.navbar-custom')
+    #wrapper
+      nav.navbar.navbar-default.navbar-fixed-top.hidden-xs(role='navigation')
+        .container
+          .navbar-header.page-scroll
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='#eq-navigation')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand.eq-brand(href='#page-top')
+              | Equus First
+          #eq-navigation.collapse.navbar-collapse
+            ul.nav.navbar-nav.navbar-right
+              li.page-scroll
+                a(href='#about') About
+              li.page-scroll
+                a(href='#services') Services
+              li.page-scroll
+                a(href='#equusbay') Shop
+              li.page-scroll
+                a(href='#contact')
+                  i.fa.fa-envelope
+      section.eq--intro.no-padding.animatedParent
+          .container
+            .eq-logo.animated.bounceInUp.slow
+              img.hidden-xs(src='assets/images/logo.svg')
+              img.visible-xs(src='assets/images/logo-full.svg')
+            h1.eq-tag.animated.bounceInUp.slower
+              | UKCC L2 - Fully Insured - CRB - First Aid - BSc(Hons) Equine Science
+            .page-scroll.animated.bounceInUp.slowest
+              a.btn.btn-outline.btn-circle(href='#about')
+                i.fa.fa-angle-double-down
+      section#about.eq--about.animatedParent
+        .eq--body
+          .container
+            h1.animated.fadeInUp.slow Welcome to EquusFirst
+            p.animated.fadeInUp.slower
+              | Whether your goal is to hack safely, improve your riding, take part in fun rides
+              | or compete in any discipline: I provide an enthusiastic, sympathetic and knowledgeable
+              | approach.
+            p.animated.fadeInUp.slowest
+              | I use simple methods to teach all levels of riders and horses, allowing you to develop
+              | an understanding rather than simply be instructed. In doing so, my pupils grow in
+              | confidence as they increase their own knowledge.
+      section#services.eq--services.animatedParent
+        .eq--body
+          .container
+            .row
+              .col-sm-12
+                h1 Services
+                p
+                  | Being passionate about animal welfare, I firmly believe in teaching both horse and rider
+                  | in a correct and fair way.
+                p
+                  | As a result of this, my clients see an obvious development in both their performance and
+                  | confidence as well as creating and strengthening a firm partnership with their horse.
+                p
+                  | I am able to teach stable management and horse care as well as riding and lunging.
+            .row
+              .col-sm-12
+                blockquote
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus enim aperiam veniam accusantium, fuga, ipsa earum accusamus praesentium! Vero in, magni eligendi harum debitis nesciunt illo nobis tempore amet, impedit.
+                span.testi-author
+                  | Vlad Radulescu, Groomer
+      section#shop.eq--shop.animatedParent
+        .eq--body
+          .container
+            h1 EquusFirst Shop
+            p
+              | EquusFirst Shop aims to provide products that are proven to work both scientifically and in the field.
+            p
+              | The products found here have been carefully hand-picked by myself using a wealth of resources
+              | to provide only the best products for my customers, and of course, your horses!
+            .alert.alert-info
+              p Our online Shop is coming soon, in the meantime please visit our eBay Shop!
+          .section-footer
+            .container
+              a.btn.btn-md.btn-outline(href='') Visit Shop
+      section#contact.eq--contact.animatedParent.hide
+        .eq--body
+          .container
+            .row
+              .col-sm-6
+      section.eq--social.no-padding.animatedParent
+        .eq--body
+          .container
+            .row
+              .hidden-xs.col-sm-9
+                h3 Stay connected
+              .col-sm-12.col-sm-3
+                ul.list-inline.social-icons
+                  li
+                    a.btn.btn-circle.btn-facebook(href='https://www.facebook.com/equusfirst?fref=website')
+                      i.fa.fa-facebook
+                  li
+                    a.btn.btn-circle.btn-twitter(href='https://twitter.com/Equus_First?ref=website')
+                      i.fa.fa-twitter
+            .row
+              .col-sm-6.social.social--facebook
+                .row.social_head
+                  .col-sm-12
+                    h3
+                      i.fa.fa-facebook-square
+                      |  EquusFirst
+                .row.social_body
+                  .col-sm-12
+              .col-sm-6.social.social--twitter
+                .row.social_head
+                  .col-sm-12
+                    h3
+                      i.fa.fa-twitter
+                      |  @Equus_First
+                .row.social_body
+                  .col-sm-12
+      footer
+        .container
+          .row
+            .col-sm-6
+              | EquusFirst 2013-2014
+
+    script(src='js/jquery.js')
+    script(src='js/less.js')
+    script(src='js/bootstrap/bootstrap.min.js')
