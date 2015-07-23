@@ -1,10 +1,3 @@
-.background-size(@arg) {
-	-webkit-background-size: @arg;
-  	 -moz-background-size: @arg;
-    	 -o-background-size: @arg;
-					background-size: @arg;
-}
-
 @font-face {
 	font-family: equusfirst;
 	src: url("../fonts/scriptina.otf");
@@ -50,13 +43,13 @@ html, body, #wrapper {
 
 	.eq {
 		&--intro {
-			background: url("../images/intro.jpg") no-repeat bottom center scroll;
+			background: url("../img/intro.jpg") no-repeat bottom center scroll;
 			display: table;
 			height: 100%;
     	text-align: center;
 			width: 100%;
 
-			.background-size(cover);
+			background-size: cover;
 		}
 
 		&-logo {
@@ -125,7 +118,7 @@ html, body, #wrapper {
 			.alert { margin: 25px 0 0; }
 
 			.section-footer {
-				background-image: url("../images/items.jpg");
+				background-image: url("../img/items.jpg");
 				background-repeat: repeat-x;
 				background-size: contain;
 				background-position: left bottom;
