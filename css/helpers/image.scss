@@ -1,0 +1,210 @@
+img {
+  vertical-align: middle;
+
+  &.-round { border-radius: 250px; }
+  &.-rounded { border-radius: ui(border, radius); }
+  &.-centered {
+    background-position: center;
+    background-size: cover;
+  }
+    
+  &.-cover { object-fit: cover; }
+  &.-contain { object-fit: contain; }
+
+  &.-placeholder {
+    
+    // The following avoids missing images to stretch to full width due to their
+    // alt tag which in general has a long string
+    // 
+    display: block;
+    overflow: hidden;
+    // background-color: color(gray, lighter);
+
+    // &.-reverse { background-color: color(white); }
+  }
+
+  &.-x100 { width: 100% }
+  &.-x20  { width: 200px; }
+  &.-x15  { width: 150px; }
+  &.-x12  { width: 140px; }
+  &.-x10  { width: 100px; }
+  &.-x9   { width: 90px; }
+  &.-x8   { width: 80px; }
+  &.-x7   { width: 70px; }
+  &.-x6   { width: 60px; }
+  &.-x5   { width: 50px; }
+  &.-x4   { width: 40px; }
+  &.-x3   { width: 30px; }
+  &.-x2   { width: 20px; }
+  &.-x1   { width: 10px; }
+
+  &.-equal {
+    &.-x100 { height: 100% }
+    &.-x20  { height: 200px; }
+    &.-x15  { height: 150px; }
+    &.-x12  { height: 140px; }
+    &.-x10  { height: 100px; }
+    &.-x9   { height: 90px; }
+    &.-x8   { height: 80px; }
+    &.-x7   { height: 70px; }
+    &.-x6   { height: 60px; }
+    &.-x5   { height: 50px; }
+    &.-x4   { height: 40px; }
+    &.-x3   { height: 30px; }
+    &.-x2   { height: 20px; }
+    &.-x1   { height: 10px; }
+  }
+}
+
+img {
+  &.-variation {
+    &-round { border-radius: 250px; }
+    &-rounded { border-radius: ui(border, radius); }
+    &-centered {
+      background-position: center;
+      background-size: cover;
+    }
+
+    &-placeholder {
+      
+      // The following avoids missing images to stretch to full width due to their
+      // alt tag which in general has a long string
+      // 
+      display: block;
+      overflow: hidden;
+      // background-color: color(gray, dark);
+    }
+  }
+
+  &.-fit {
+    &-cover { object-fit: cover; }
+    &-contain { object-fit: contain; }
+  }
+
+  &.-size {
+    &_x100 { width: 100% }
+    &_x20  { width: 200px; }
+    &_x15  { width: 150px; }
+    &_x12  { width: 140px; }
+    &_x10  { width: 100px; }
+    &_x9   { width: 90px; }
+    &_x8   { width: 80px; }
+    &_x7   { width: 70px; }
+    &_x6   { width: 60px; }
+    &_x5   { width: 50px; }
+    &_x4   { width: 40px; }
+    &_x3   { width: 30px; }
+    &_x2   { width: 20px; }
+    &_x1   { width: 10px; }
+  
+    &-equal {
+      &.-size {
+        &_x100 { height: 100% }
+        &_x20  { height: 200px; }
+        &_x15  { height: 150px; }
+        &_x12  { height: 140px; }
+        &_x10  { height: 100px; }
+        &_x9   { height: 90px; }
+        &_x8   { height: 80px; }
+        &_x7   { height: 70px; }
+        &_x6   { height: 60px; }
+        &_x5   { height: 50px; }
+        &_x4   { height: 40px; }
+        &_x3   { height: 30px; }
+        &_x2   { height: 20px; }
+        &_x1   { height: 10px; }
+      }
+    }
+  }
+}
+
+svg {
+
+  // @each $color in $colors {
+  //   &.-#{ $color } {
+  //     fill: color($color);
+     
+  //     &.-light    { fill: color($color, light); }
+  //     &.-lighter  { fill: color($color, lighter); }
+  //     &.-dark     { fill: color($color, dark); }
+  //     &.-darker   { fill: color($color, darker); }
+  //   }
+  // }
+  
+  &.-x100 { width: 100% }
+  &.-x20  { width: 200px; }
+  &.-x15  { width: 150px; }
+  &.-x12  { width: 140px; }
+  &.-x10  { width: 100px; }
+  &.-x9   { width: 90px; }
+  &.-x8   { width: 80px; }
+  &.-x7   { width: 70px; }
+  &.-x6   { width: 60px; }
+  &.-x5   { width: 50px; }
+  &.-x4   { width: 40px; }
+  &.-x3   { width: 30px; }
+  &.-x2   { width: 20px; }
+  &.-x1   { width: 10px; }
+
+  &.-equal {
+    &.-x100 { height: 100% }
+    &.-x20  { height: 200px; }
+    &.-x15  { height: 150px; }
+    &.-x12  { height: 140px; }
+    &.-x10  { height: 100px; }
+    &.-x9   { height: 90px; }
+    &.-x8   { height: 80px; }
+    &.-x7   { height: 70px; }
+    &.-x6   { height: 60px; }
+    &.-x5   { height: 50px; }
+    &.-x4   { height: 40px; }
+    &.-x3   { height: 30px; }
+    &.-x2   { height: 20px; }
+    &.-x1   { height: 10px; }
+  }
+  
+  &.-size {
+    &_x100 { height: 100% }
+    &_x20  { height: 200px; }
+    &_x15  { height: 150px; }
+    &_x12  { height: 140px; }
+    &_x10  { height: 100px; }
+    &_x9   { height: 90px; }
+    &_x8   { height: 80px; }
+    &_x7   { height: 70px; }
+    &_x6   { height: 60px; }
+    &_x5   { height: 50px; }
+    &_x4   { height: 40px; }
+    &_x3   { height: 30px; }
+    &_x2   { height: 20px; }
+    &_x1   { height: 10px; }
+
+    &-equal {
+      &.-size {
+        &_x100 { width: 100% }
+        &_x20  { width: 200px; }
+        &_x15  { width: 150px; }
+        &_x12  { width: 140px; }
+        &_x10  { width: 100px; }
+        &_x9   { width: 90px; }
+        &_x8   { width: 80px; }
+        &_x7   { width: 70px; }
+        &_x6   { width: 60px; }
+        &_x5   { width: 50px; }
+        &_x4   { width: 40px; }
+        &_x3   { width: 30px; }
+        &_x2   { width: 20px; }
+        &_x1   { width: 10px; }
+      }
+    }
+  }
+
+  &.-color { 
+    // @each $color in $colors {
+      // &-#{ $color } { fill: color($color); }
+
+      // &-#{ $color }_dark { fill: color($color, dark); }
+      // &-#{ $color }_darker { fill: color($color, darker); }
+    // }
+  }
+}
