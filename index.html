@@ -13,51 +13,39 @@
 	<body>
 
 		<div class="row align-center">
-			<div class="cell-sm-7 content">
+			<div class="cell-sm-9 cell-md-7 content">
+
 				<div class="column">
 					<header class="cell-sm-auto">
-						<nav>
-							<ul>
-								<li>
-									<img src="img/logo-full.svg" width="100" />
-								</li>
+						<nav class="row align-bottom align-xs-center -padding_2">
+							<div class="cell-xs-auto cell-sm -padding_2">
+								<img class="-x10" src="img/logo-full.svg" alt="EquusFirst Logo" />
+							</div>
 
-								<li class="spacer"></li>
-
-								<li>
-									<a class="-uppercase -x500 -gray -darker -smaller -padding_2 -reset" href="#About">About</a>
-								</li>
-
-								<li>
-									<a class="-uppercase -x500 -gray -darker -smaller -padding_2 -reset" href="#Services">Services</a>
-								</li>
-
-								<li>
-									<a class="-uppercase -x500 -gray -darker -smaller -padding_2 -reset" href="#Contact">Contact</a>
-								</li>
+							<ul class="cell-xs-auto">
+								<li><a class="-uppercase -x500 -gray -darker -smaller -padding_2 -reset" href="#about">About</a></li>
+								<li><a class="-uppercase -x500 -gray -darker -smaller -padding_2 -reset" href="#products">Products</a></li>
+								<li><a class="-uppercase -x500 -facebook -smaller -padding_2 -reset" href="#feed">Feed</a></li>
+								<li><a class="-uppercase -x500 -gray -darker -smaller -padding_2 -reset" href="#contact">Contact</a></li>
 							</ul>
 						</nav>
 					</header>
 
-					<section class="intro cell-sm-auto" id="intro">
-						<img class="splash blur" src="img/splash.jpg" width="100%" />
-						<img class="splash" src="img/splash.jpg" width="100%" />
+					<div class="intro cell-sm-auto">
+						<img class="splash blur" src="img/splash-alt.jpg" alt="EquusFirst Splash Image: Contains horse, nature, grass, sunset" width="100%" />
+						<img class="splash" src="img/splash-alt.jpg" alt="EquusFirst Splash Image: Contains horse, nature, grass, sunset" width="100%" />
 
-						<div class="column align-center align-middle">
-							<img src="img/logo-full.svg" width="400" />
+						<section class="column align-center align-middle -padding" id="intro">
+							<img class="-x15" src="img/logo.svg" alt="EquusFirst Logo" />
 
 							<h1 class="-center -white -x-large -x500 -margin-top">
-								UKCC L2 - Fully Insured - CRB - First Aid - BSc(Hons) Equine Science
+								UKCC L2 - Fully Insured - BSD - First Aid - BSc(Hons) Equine Science
 							</h1>
-						</div>
+						</section>
+					</div>
 
-						<!-- Photo by Bas Masseus from Pexels -->
-					</section>
-
-					<section class="about cell-sm-auto -padding-y" id="about">
-						<h1 class="">
-							Welcome to EquusFirst
-						</h1>
+					<section class="about cell-sm-auto" id="about">
+						<h1 class="-x500 -line-10 -uppercase">Welcome to EquusFirst</h1>
 
 						<p class="-x300 -margin-top_2">
 							Whether your goal is to hack safely, improve your riding, take part in fun rides
@@ -72,13 +60,97 @@
 						</p>
 					</section>
 
-					<section class="services cell-sm-auto" id="services">
+					<section class="cell-sm-auto" id="products">
+						<h1 class="-x500 -line-10 -uppercase">Products</h1>
+
+						<div class="display-grid -gap-16 -columns-xs-1 -columns-sm-2asd -columns-md-4 products -margin-top_2">
+							<div class="column cell-xs product">
+								<div class="cell-sm -margin-bottom_2">
+									<h1 class="product-title">Full Biomechanical Assessment</h1>
+									
+									<ul class="product-options">
+										<li>Horse and Rider <strong>90 minutes</strong> for <strong>£60.00</strong></li>
+										<li>Horse only <strong>60 minutes</strong> for £<strong>35.00</strong></li>
+										<li>Rider only <strong>60 minutes</strong> for <strong>£35.00</strong></li>
+									</ul>
+								</div>
+
+								<a href="" class="product-action">Book Now</a>
+							</div>
+
+							<div class="column cell-xs product">
+								<div class="cell-sm -margin-bottom_2">
+									<h1 class="product-title">Mobility, Stability and Flexibility</h1>
+
+									<ul class="product-options">
+										<li>Horse only <strong>45 minutes</strong> for <strong>£35.00</strong></li>
+										<li>Rider only <strong>30</strong> or <strong>45 minutes</strong> for <strong>£20.00</strong> or <strong>£30.00</strong></li>
+									</ul>
+								</div>
+
+								<a href="" class="product-action">Book Now</a>
+							</div>
+
+							<div class="column cell-xs product">
+								<div class="cell-sm -margin-bottom_2">
+									<h1 class="product-title">Core Strength Workshop</h1>
+
+									<ul class="product-options">
+										<li>Rider only <strong>35 minutes</strong> for <strong>£20.00</strong></li>
+									</ul>
+								</div>
+
+								<a href="" class="product-action">Book Now</a>
+							</div>
+
+							<div class="column cell-xs product">
+								<div class="cell-sm -margin-bottom_2">
+									<h1 class="product-title">Confidence Coaching</h1>
+
+									<ul class="product-options">
+										<li>Phone Consultation <strong>30 minutes</strong> for <strong>£15.00</strong></li>
+										<li>Horse and Rider <strong>45 minutes</strong> for <strong>£35.00</strong></li>
+									</ul>
+								</div>
+
+								<a href="" class="product-action">Book Now</a>
+							</div>
+						</div>
 					</section>
+
+					<!-- <section class="feed cell-sm-auto" id="feed">
+						<div class="row align-middle">
+							<div class="cell-sm">
+								<h2 class="-line-10 -x500 -facebook">
+									Latest from our <span class="-x700">Facebook</span> Page
+								</h2>
+							</div>
+
+							<div class="cell-sm-auto">
+								<div class="fb-like" data-href="https://www.facebook.com/pg/equusfirst/" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+							</div>
+						</div> -->
+
+						<!-- <div id="feedContent">
+							<template id="feedPost">
+								<div class="row pill -gray -lighter -rounded -padding_3 -margin-top_3">
+									<div class="cell-sm-auto -margin-right_2">
+										<img class="feed-post-image -x10 -equal -rounded" src="" alt="" />
+									</div>
+
+									<div class="cell-sm">
+										<p class="feed-post-content"></p>
+									</div>
+								</div>
+							</template>
+						</div>
+					</section> -->
 				</div>
+
 			</div>
 		</div>
 
-		<footer class="row" id="contact">
+		<!-- <footer class="row" id="contact">
 			<div class="cell-sm">
 				EquusFirst @ 2019. All Rights reserved
 			</div>
@@ -86,8 +158,11 @@
 			<div class="cell-sm-auto">
 				Designed and Built by Studio51 Business Solutions
 			</div>
-		</footer>
+		</footer> -->
 
 		<script src="js/index.ts"></script>
 	</body>
+
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v4.0&appId=1245264632308266&autoLogAppEvents=1"></script>
 </html>
