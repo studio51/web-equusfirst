@@ -1,4 +1,5 @@
 @import 'grid/gridlecss.scss';
+@import 'grid/gridlecss-grid.scss';
 
 $background-color: #F8F8FB;
 $white:    #fff;
@@ -191,32 +192,40 @@ $config: (
   }
 }
 
+@import 'helpers/image.scss';
 @import 'helpers/margin.scss';
 @import 'helpers/padding.scss';
 @import 'helpers/typography.scss';
 
-@import url('https://fonts.googleapis.com/css?family=Crimson+Pro:200,300,400,500,600,700,800,900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Darker+Grotesque:300,400,500,600,700,800,900&display=swap');
+@import 'components/pill.scss';
+@import 'components/button.scss';
 
-html { background-color: color(gray, light); }
+// @import url('https://fonts.googleapis.com/css?family=Crimson+Pro:200,300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Darker+Grotesque:300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500&display=swap');
 
 body {
-  font-family: 'Darker Grotesque', sans-serif;
-  font-size: 16pt;
-  font-weight: 200;
+  @include mq($from: 'xs') { background-color: color(white); }
+  @include mq($from: 'sm') { background-color: color(gray, lighter); }
+
+  font-family: 'Quicksand', sans-serif;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Darker Grotesque', sans-serif;
+  }
 }
 
 .content {
-  background-color: color(white);
-  margin: ui(spacing);
-  border-radius: 12px;
-  padding: ui(spacing);
+  @include mq($from: 'sm') {
+    background-color: color(white);
+    margin: ui(spacing);
+    border-radius: 8pt;
+    box-shadow: 0 16px 32px -16px color(gray, dark);
+  }
 }
 
 header {
   nav {
-    padding-bottom: ui(spacing) / 2;
-
     ul {
       margin: 0;
       padding: 0;
@@ -233,43 +242,80 @@ header {
   }
 }
 
-section {
-  z-index: 0;
+.intro {
+  position: relative;
 
-  &.intro {
+  section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
+  img.splash {
+    object-fit: cover;
+    object-position: top 0;
+    height: ui(spacing) * 13;
+    z-index: 0;
     position: relative;
+    top: 0;
 
-    img.splash {
-      border-radius: 12px;
-      margin-left: -(ui(spacing) * 2);
-      object-fit: cover;
-      object-position: top 0;
-      width: calc(100% + #{ ui(spacing) * 4 });
-      height: ui(spacing) * 13;
-      z-index: 0;
-      position: relative;
-
-      &.blur { filter: blur(3px); }
-
-      &:nth-child(1) {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: calc(100% + #{ ui(spacing) * 3.5 });
-        height: ui(spacing) * 12.5;
-        left: ui(spacing) / 3.5;
-        top: ui(spacing) / 3.5;
-        z-index: 1;
-      }
-    }
-
-    > .column {
+    &:nth-child(1) {
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 2;
+      width: calc(100% - #{ ui(spacing) / 2 });
+      height: ui(spacing) * 12;
+      left: ui(spacing) / 2;
+      top: ui(spacing) / 2;
+      z-index: 1;
+    }
+
+    @include mq($from: 'sm') {
+      width: calc(100% + #{ ui(spacing) * 2 });
+      margin-left: -(ui(spacing));
+      border-radius: 8pt;
+
+      &:nth-child(1) { width: calc(100% + #{ ui(spacing) * 2 } - #{ ui(spacing) }); }
+    }
+
+    &.blur { filter: blur(3px); }
+  }
+}
+
+.products {
+  .product {
+    @extend .pill, .-orange, .-lighter;
+    @extend .-padding_2;
+
+    &-title {
+      @extend .-x700, .-orange, .-dark, .-center, .-line-10, .-larger;
+      @extend .-margin-bottom_2;
+    }
+
+    &-options {
+      margin: 0;
+      font-size: 14px;
+
+      @extend .-padding-left_2;
+      @extend .-x300, .-line-11;
+
+      li + li { @extend .-margin-top_4; }
+    }
+
+    &-action {
+      @extend .btn, .-small, .-orange, .-lighter, .-round;
+      @extend .-x700;
     }
   }
+}
+
+section {
+  z-index: 0;
+
+  @extend .-padding;
+
+  + section { padding-top: 0; }
 }

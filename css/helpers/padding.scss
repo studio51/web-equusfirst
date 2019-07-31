@@ -39,6 +39,7 @@ $padding_size_values: (
         @if ($size == '') { $_size: '_'; } @else { $_size: "_" + $size; }
 
         padding#{ $_variation }: padding-size(#{ $_size });
+        // border: 1px solid purple;
       }
     }
   }
@@ -48,8 +49,8 @@ $padding_size_values: (
 
 @each $breakpoint in $mq-breakpoints {
   $break: nth($breakpoint, 1);
-  
-  @include mq($break) {
+
+  @include mq($from: $break) {
     @include padding("padding-#{ $break }");
   }
 }

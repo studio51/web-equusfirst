@@ -24,9 +24,18 @@ img {
   }
 
   &.-x100 { width: 100% }
+  &.-x50  { width: 500px; }
+  &.-x45  { width: 450px; }
+  &.-x40  { width: 400px; }
+  &.-x35  { width: 350px; }
+  &.-x30  { width: 300px; }
+  &.-x25  { width: 250px; }
   &.-x20  { width: 200px; }
   &.-x15  { width: 150px; }
-  &.-x12  { width: 140px; }
+  &.-x14  { width: 140px; }
+  &.-x13  { width: 130px; }
+  &.-x12  { width: 120px; }
+  &.-x11  { width: 110px; }
   &.-x10  { width: 100px; }
   &.-x9   { width: 90px; }
   &.-x8   { width: 80px; }
@@ -40,9 +49,18 @@ img {
 
   &.-equal {
     &.-x100 { height: 100% }
+    &.-x50  { height: 500px; }
+    &.-x45  { height: 450px; }
+    &.-x40  { height: 400px; }
+    &.-x35  { height: 350px; }
+    &.-x30  { height: 300px; }
+    &.-x25  { height: 250px; }
     &.-x20  { height: 200px; }
     &.-x15  { height: 150px; }
-    &.-x12  { height: 140px; }
+    &.-x14  { height: 140px; }
+    &.-x13  { height: 130px; }
+    &.-x12  { height: 120px; }
+    &.-x11  { height: 110px; }
     &.-x10  { height: 100px; }
     &.-x9   { height: 90px; }
     &.-x8   { height: 80px; }
