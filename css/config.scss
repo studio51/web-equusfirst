@@ -1,0 +1,143 @@
+@import 'grid/gridlecss.scss';
+@import 'grid/gridlecss-grid.scss';
+
+$white:    #fff;
+$gray:     #ecf0f1;
+$black:    #34495e;
+$blue:     #6DA9ED;
+$green:    #2ecc71;
+$yellow:   #f1c40f;
+$orange:   #e67e22;
+$red:      #e74c3c;
+$purple:   #9b59b6;
+
+$colors: ('white', 'gray', 'black', 'blue', 'green', 'yellow', 'orange', 'red', 'purple', 'facebook');
+
+$config: (
+  border: (
+    size: 1px,
+    radius: 6px
+  ),
+
+  palette: (
+    brand: (
+      primary:     #8A9EF4,
+      secondary:   #E4C7F9,
+      alternative: #D0DFEB,
+      bright:      #CED3F6,
+      dark:        #A6D2F2,
+      light:       #FDFDFD
+    ),
+
+    color: (
+      "white": (
+        base: #FFFFFF
+      ),
+      
+      "gray": (
+        lighter:  #f7f7f7,
+        light:    whitesmoke,
+        base:     #F2F2F2,
+        dark:     #c7c7c7,
+        darker:   #a0a0a0
+      ),
+      
+      "black": (
+        lightest: #919EAB,
+        lighter:  #637381,
+        light:    #454F5B,
+        base:     #212B35
+      ),
+
+      "blue": (
+        lighter:  #ebf5fa,
+        light:    #ABDCFF,
+        base:     $blue,
+        dark:     darken($blue, 10%),
+        darker:   darken($blue, 10%),
+        text:     darken($blue, 10%)
+      ),
+
+      "green": (
+        lighter:  hsl(157, 55, 98),
+        light:    hsl(157, 55, 88),
+        base:     hsl(157, 55, 78),
+        dark:     hsl(157, 55, 68),
+        darker:   hsl(157, 55, 58),
+        text:     hsl(157, 55, 38)
+      ),
+
+      "yellow": (
+        lighter:  hsl(48, 94, 87),
+        light:    hsl(48, 94, 77),
+        base:     hsl(48, 94, 67),
+        dark:     hsl(48, 94, 57),
+        darker:   hsl(48, 94, 47),
+        text:     #595130
+      ),
+
+      "orange": (
+        lighter:  hsl(24, 100, 85),
+        light:    hsl(24, 100, 75),
+        base:     hsl(24, 100, 65),
+        dark:     hsl(24, 100, 55),
+        darker:   hsl(24, 100, 45),
+        text:     hsl(24, 100, 35)
+      ),
+
+      "red": (
+        lighter:  #fbeae5,
+        light:    #FEB692,
+        base:     #EA5455,
+        dark:     #bf0711,
+        darker:   #330101,
+        text:     #583c35
+      ),
+
+      "purple": (
+        lighter:  #f6f0fd,
+        light:    #CE9FFC,
+        base:     #7367F0,
+        dark:     #50248f,
+        darker:   #230051,
+        text:     #50495a
+      ),
+
+      'facebook': (
+        lighter:  #3b5998,
+        light:    #3b5998,
+        base:     #3b5998,
+        dark:     #3b5998,
+        darker:   #3b5998,
+        text:     #3b5998
+      )
+    )
+  ),
+
+  spacing: 32px
+);
+
+@function ui($keys...) {
+  @return config($config, $keys...);
+}
+
+@function config($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+
+  @return $map;
+}
+
+@function color($key, $saturation: base, $from: null) {
+  @if ($from) {
+    @return config($config, palette, $from, "#{ $key }");
+  } @else {
+    @return config($config, palette, color, "#{ $key }", $saturation);
+  }
+}
+
+@import 'helpers/image.scss';
+@import 'helpers/margin.scss';
+@import 'helpers/padding.scss';
+@import 'helpers/typography.scss';
