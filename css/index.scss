@@ -2,6 +2,16 @@
 @import 'layout.scss';
 @import 'theme.scss';
 
+.overflow-x-hidden {
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+* {
+  transition-property: all;
+  transition-duration: 1s;
+}
+
 body {
   @include mq($from: 'xs') { background-color: color(white); }
   @include mq($from: 'sm') { background-color: color(gray, lighter); }
@@ -9,14 +19,15 @@ body {
   font-family: 'Quicksand', sans-serif;
 
   h1, h2, h3, h4, h5, h6 { font-family: 'Darker Grotesque', sans-serif; }
-  > .row { overflow-x: hidden; }
 }
 
 .content {
+  
   @include mq($from: 'sm') {
     background-color: color(white);
-    margin: ui(spacing);
-    border-radius: 8pt;
+    margin: 0;
+    border-bottom-left-radius: 8pt;
+    border-bottom-right-radius: 8pt;
     box-shadow: 0 16px 32px -16px color(gray, dark);
     z-index: 10;
     position: relative;
@@ -88,17 +99,11 @@ header {
   position: relative;
 
   .background {
-    position: absolute;
-    top: 0;
     left: 0;
-    width: 110%;
     border-top-left-radius: ui(spacing);
-    height: 100%;
-    z-index: -1;
     background-color: color(yellow, light);
 
     @include mq($from: 'sm') {
-      transform: rotate(-7deg);
       left: -37px;
 
       &::after {
@@ -115,9 +120,21 @@ header {
     @include mq($from: 'lg') {  }
   }
 
-  .product {
-    &:nth-child(3) { margin-top: 20px; }
+  .shadow {
+    &::before {
+      left: 0;
+      top: 60px;
+      box-shadow: -5px 0 15px 1px color(yellow, darker);
+    }
 
+    &::after {
+      right: 0;
+      top: -60px;
+      box-shadow: 5px 0 15px 1px color(yellow, darker);
+    }
+  }
+
+  .product {
     @include mq($from: 'sm') {
       &:nth-child(1) { margin-top: 60px; }
       &:nth-child(2) { margin-top: 20px; }
@@ -127,6 +144,7 @@ header {
     @include mq($from: 'md') {
       &:nth-child(1) { margin-top: 80px; }
       &:nth-child(2) { margin-top: 50px; }
+      &:nth-child(3) { margin-top: 20px; }
       &:nth-child(4) { margin-top: -10px; }
     }
 
@@ -139,47 +157,35 @@ header {
       margin: 0;
 
       @extend .-padding-left_2;
-      @extend .-white, .-x400, .-line-11;
+      @extend .-white, .-x500, .-line-11;
 
-      li + li { @extend .-margin-top_3; }
+      li + li { @extend .-margin-top_4; }
     }
   }
 }
 
 .wellbeing {
-  position: relative;
-  // padding: (ui(spacing) * 2) ui(spacing);
+  @include mq($from: 'sm', $until: 'md') {
+    padding-top: ui(spacing) * 2;
 
-  .action {
-    margin-bottom: -16px;
+    .action { margin-bottom: -(ui(spacing)); }
+  }
+
+  @include mq($from: 'md') {
+    padding-top: ui(spacing) * 3;
+    padding-bottom: 0;
   }
 }
 
 .feed {
   position: relative;
 
-  &::after {
-    // box-shadow: 0 (ui(spacing) / 2) ui(spacing) -(ui(spacing) / 2) darken(color(facebook), 7.5%);
-    // content: '';
-    // height: 100%;
-    // left: 0;
-    // position: absolute;
-    // top: 0;
-    // width: 100%;
-  }
-
   .background {
-    position: absolute;
-    width: 110%;
-    top: 0;
     left: -(ui(spacing));
     border-bottom-right-radius: ui(spacing);
-    height: 100%;
-    z-index: -1;
     background-color: color(blue);
 
     @include mq($from: 'sm') {
-      transform: rotate(-7deg);
       top: 3px;
       left: -23px;
 
@@ -198,8 +204,44 @@ header {
       top: 7.5px;
     }
   }
+
+  .shadow {
+    &::before {
+      left: 0;
+      top: 60px;
+      box-shadow: -5px 0 15px 1px darken(color(blue, darker), 5%);
+    }
+
+    &::after {
+      right: 0;
+      top: -60px;
+      box-shadow: 5px 0 15px 1px darken(color(blue, darker), 5%);
+    }
+  }
 }
 
 section {
   @extend .-padding;
+
+  .background {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 110%;
+    z-index: -1;
+
+    @include mq($from: 'sm') { transform: rotate(-7deg); }
+  }
+
+  @include mq($from: 'sm') {
+    .shadow {
+      &::before,
+      &::after {
+        content: '';
+        height: 100%;
+        position: absolute;
+        width: 1px;
+      }
+    }
+  }
 }
