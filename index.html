@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<link rel="import" href="services-form.html" />
+
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>EquusFirst | Freelance Ridding Instructor, Horse, Equestrian, Equine, Coach, Equine Science</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="UKCC L2 - Fully Insured - BSD - First Aid - BSc(Hons) Equine Science, Freelance Ridding Instructor, Horse, Equestrian, Equine, Coach, Equine Science">
+
+ 		<title>EquusFirst | Freelance Ridding Instructor, Horse, Equestrian, Equine, Coach, Equine Science</title>
 
 		<link rel="stylesheet" href="css/index.scss" type="text/css" />
 	</head>
@@ -16,26 +20,28 @@
 
 				<div class="column">
 					<header class="cell-sm-auto">
-						<nav class="row align-middle -padding_2">
-							<div class="cell-xs-auto cell-sm -padding_2">
-								<img class="-x11" src="img/logo-full.svg" alt="EquusFirst Logo" />
+						<nav class="row align-middle align-center -padding_2">
+							<div class="cell-xs-auto -padding_2">
+								<img class="-x15 logo" src="img/logo-full.svg" alt="EquusFirst Logo" />
 							</div>
-							
-							<ul class="cell-xs-auto">
-								<li><a class="-uppercase -x500 -gray -darker -smaller -padding_2 -reset" href="#about">About &amp; Services</a></li>
-								<li>
-									<a class="-uppercase -x500 -green -smaller -padding_2 -reset -center" href="#products">
-										Embla Fitness &amp; Wellbeing
-									</a>
-								</li>
-								<li><a class="-uppercase -x500 -gray -darker -smaller -padding_2 -reset" href="#contact">Contact</a></li>
-							</ul>
+
+							<div class="cell-xs-12 cell-md">
+								<ul class="row align-sm-center align-md-right">
+									<li><a class="-uppercase -x500 -gray -darker -smaller -padding_2 -reset" href="#about">About &amp; Services</a></li>
+									<li>
+										<a class="-uppercase -x500 -green -smaller -padding_2 -reset -center" href="#wellbeing">
+											Embla Fitness &amp; Wellbeing
+										</a>
+									</li>
+									<li><a class="-uppercase -x500 -facebook -smaller -padding_2 -reset" href="#feed">Feed</a></li>
+								</ul>
+							</div>
 						</nav>
 					</header>
 
 					<div class="intro cell-sm-auto">
-						<img class="splash blur" src="img/splash.jpg" alt="EquusFirst Splash Image: Contains horse, nature, grass, sunset" width="100%" />
-						<img class="splash" src="img/splash.jpg" alt="EquusFirst Splash Image: Contains horse, nature, grass, sunset" width="100%" />
+						<img class="splash blur lazy" data-src="img/splash.jpg" alt="EquusFirst Splash Image: Contains horse, nature, grass, sunset" width="100%" />
+						<img class="splash lazy" data-src="img/splash.jpg" alt="EquusFirst Splash Image: Contains horse, nature, grass, sunset" width="100%" />
 
 						<section class="column align-center align-middle -padding" id="intro">
 							<img class="-x15" src="img/logo.svg" alt="EquusFirst Logo" />
@@ -64,43 +70,43 @@
 						<p class="-x300 -margin-top_2">Below you will find a list of Services I offer to benefit you and your horse!</p>
 					</section>
 
-					<section class="cell-sm-auto products" id="products">
+					<section class="cell-sm-auto services" id="services">
 						<div class="background"></div>
 						<div class="shadow"></div>
 
 						<div class="display-grid -gap-32 -columns-xs-1 -columns-sm-2 -columns-md-4">
-							<div class="product">
-								<h1 class="product-title">Full Biomechanical Assessment</h1>
+							<div class="service">
+								<h1 class="service-title">Full Biomechanical Assessment</h1>
 
-								<ul class="product-options">
+								<ul class="service-options">
 									<li>Horse and Rider <strong>90 minutes</strong> - <strong>£60.00</strong></li>
 									<li>Horse only <strong>60 minutes</strong> - <strong>£35.00</strong></li>
 									<li>Rider only <strong>60 minutes</strong> - <strong>£35.00</strong></li>
 								</ul>
 							</div>
 
-							<div class="product">
-								<h1 class="product-title">Mobility, Stability and Flexibility</h1>
+							<div class="service">
+								<h1 class="service-title">Mobility, Stability and Flexibility</h1>
 
-								<ul class="product-options">
+								<ul class="service-options">
 									<li>Horse only <strong>45 minutes</strong> - <strong>£35.00</strong></li>
 									<li>Rider only <strong>30</strong> or <strong>45 minutes</strong> - <strong>£20.00</strong> or <strong>£30.00</strong></li>
 								</ul>
 							</div>
 
-							<div class="product">
-								<h1 class="product-title">Confidence Coaching</h1>
+							<div class="service">
+								<h1 class="service-title">Confidence Coaching</h1>
 
-								<ul class="product-options">
+								<ul class="service-options">
 									<li>Phone Consultation <strong>30 minutes</strong> - <strong>£15.00</strong></li>
 									<li>Horse and Rider <strong>45 minutes</strong> - <strong>£35.00</strong></li>
 								</ul>
 							</div>
 
-							<div class="product">
-								<h1 class="product-title">Other Services</h1>
+							<div class="service">
+								<h1 class="service-title">Other Services</h1>
 
-								<ul class="product-options">
+								<ul class="service-options">
 									<li>Core Strength Workshop Rider only <strong>35 minutes</strong> - <strong>£20.00</strong></li>
 									<li>1-2-1 tailored dismounted session with personalised plan - <strong>£25.00</strong></li>
 									<li>Fancy Footwork Clinics ( 4+ riders ) - <strong>£25.00</strong></li>
@@ -111,7 +117,7 @@
 
 						<div class="row align-left -margin-top">
 							<div class="cell-sm-auto">
-								<a href="" class="btn -medium -yellow -solid -darker -round">
+								<a id="servicesForm" href="" class="btn -medium -yellow -solid -darker -round">
 									<span class="-x700 -white">Book Now</span>
 								</a>
 							</div>
@@ -119,8 +125,6 @@
 					</section>
 
 					<section class="column wellbeing" id="wellbeing">
-						<div class="background"></div>
-
 						<div class="cell-xs">
 							<h1 class="-line-10 -x500 -green -margin-bottom">
 								Embla Fitness &amp; Wellbeing
@@ -154,44 +158,72 @@
 						</div>
 
 						<h2 class="-line-10 -x500 -white -margin-top -margin-bottom">
-							Latest from our <span class="-x700">Facebook</span> Page
+							Latest posts and testimonials from our <span class="-x700">Facebook</span> Page
 						</h2>
 
-						<div id="feedContent">
-							<template id="feedPost">
-								<div class="row align-middle pill -blue -lighter -rounded -padding_3 -margin-top_3">
+						<div class="slider-container">
+							<div class="slider" id="feedContent"></div>
+
+							<div class="row align-right -margin-xs-top">
+								<div class="cell-sm-auto">
+									<div class="row _margin-x_3 slider-controls">
+										<a class="prev btn -blue -darker -solid -medium -round -icon -icon-only cell-xs-auto" href="#">
+											<span class="-line-8 -large -white">&leftarrowtail;</span>
+										</a>
+
+										<a class="next btn -blue -darker -solid -medium -round -icon -icon-only cell-xs-auto" href="#">
+											<span class="-line-8 -large -white">&rightarrowtail;</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<template id="feedPost">
+							<div>
+								<div class="row align-middle">
 									<div class="cell-sm-auto -margin-right_2">
-										<img class="feed-post-image -x8 -equal -rounded" src="" alt="" />
+										<img class="feed-post-image -x10 -equal -rounded" data-src="img/1x1.png" alt="" />
 									</div>
 
 									<div class="cell-sm">
-										<p class="feed-post-content"></p>
+										<p class="feed-post-content -white -x400"></p>
 									</div>
 								</div>
-							</template>
-						</div>
-					</section>
-
-					<section class="cell-sm-auto testimonials" id="testimonials">
-						<div class="row">
-							<div class="cell-sm-auto">
-								Jo Latham, 8th September, 2014
-
-								<p>Today I and my 17.3 5yr old shire made had a lesson from Emma and I have to say I am over the moon and re motivated.</p>
-								<p>Emma and I have been co-workers in the past and friends for a number of years so I thought this may have affected the way she approached teaching me and of course the way I took things on board. But I am very pleased to say that once in side the arena we both managed to leave our personal friendship behind the closed gate. </p>
-								<p>Emma was very professional and explained everything in a scientific but very easy way to understand and I feel that bess and I achieved a great deal in the hour! I will definitely be making this a regular occurrence from now on.</p>
-								<p>Thank you Emma!!!</p>
 							</div>
-						</div>
+						</template>
+
+						<template id="testimonialPost">
+							<div class="row testimonial">
+								<div class="cell-sm-auto">
+									<div class="row -margin-bottom_2">
+										<div class="cell-sm">
+											<h1 class="-x500 -white -line-10">
+												<span class="testimonial-post-author"></span>
+												<span class="testimonial-post-source -x500 -medium"></span>
+											</h1>
+										</div>
+
+										<div class="cell-sm-auto">
+											<i class="testimonial-post-date -x400 -white -small -line-10"></i>
+										</div>
+									</div>
+
+									<div class="testimonial-post-content"></div>
+								</div>
+							</div>
+						</template>
 					</section>
+
+					<div class="hidden-xs clearfix"></div>
 				</div>
 			</div>
 		</div>
 
 		<footer class="-padding" id="contact">
-			<p class="-center -line-10">&copy; Copyright 2019, EquusFirst. All Rights reserved.</p>
-			<p class="-center -line-10 -margin-top_3">
-				<a href="https://studio51.solutions">Studio51 Business Solutions</a>
+			<p class="-center -line-10 -x500">&copy; Copyright 2019, EquusFirst. All Rights reserved.</p>
+			<p class="-center -line-10 -x400 -small -margin-top_3">
+				Design &amp; Website by <a class="-reset -blue -x500" href="https://studio51.solutions">Studio51 Solutions</a>
 			</p>
 		</footer>
 
