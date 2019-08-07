@@ -1,9 +1,11 @@
-import EquusFirstScrapper from './scrapper';
+import EquusFirstFeed from './feed';
+import EquusFirstServices from './services';
 
-new EquusFirstScrapper();
+import LazyLoad from 'vanilla-lazyload';
 
-// export default class Application {
-//   constructor(a) {
-//     console.log(a)
-//   }
-// }
+new EquusFirstFeed();
+new EquusFirstServices();
+
+new LazyLoad({
+  elements_selector: '.lazy'
+});
