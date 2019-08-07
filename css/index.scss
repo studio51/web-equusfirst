@@ -7,10 +7,10 @@
   -webkit-overflow-scrolling: touch;
 }
 
-* {
-  transition-property: all;
-  transition-duration: 1s;
-}
+// * {
+//   transition-property: all;
+//   transition-duration: 1s;
+// }
 
 body {
   @include mq($from: 'xs') { background-color: color(white); }
@@ -22,7 +22,6 @@ body {
 }
 
 .content {
-  
   @include mq($from: 'sm') {
     background-color: color(white);
     margin: 0;
@@ -35,12 +34,16 @@ body {
 }
 
 header {
+  .logo {
+    @include mq($from: 'md') {
+      width: 100px;
+    }
+  }
+
   nav {
     ul {
       margin: 0;
       padding: 0;
-      display: flex;
-      align-items: center;
       list-style: none;
 
       li {
@@ -95,8 +98,10 @@ header {
   }
 }
 
-.products {
+.services {
   position: relative;
+
+  @include mq($from: 'md') { padding-bottom: 0; }
 
   .background {
     left: 0;
@@ -134,7 +139,7 @@ header {
     }
   }
 
-  .product {
+  .service {
     @include mq($from: 'sm') {
       &:nth-child(1) { margin-top: 60px; }
       &:nth-child(2) { margin-top: 20px; }
@@ -218,6 +223,35 @@ header {
       box-shadow: 5px 0 15px 1px darken(color(blue, darker), 5%);
     }
   }
+
+  .testimonial {
+    &-post-content {
+      p {
+        @extend .-white;
+        @extend .-x300, .-line-12;
+
+        + p { @extend .-margin-top_3; }
+      }
+    }
+  }
+
+  @include mq($from: 'sm') {
+    .slider-container {
+      position: relative;
+
+      .slider-controls {
+        position: absolute;
+        right: 0;
+        bottom: -(ui(spacing) * 3.5);
+      }
+    }
+  }
+
+  + .clearfix {
+    height: 92px;
+
+    @include mq($from: 'md') { height: 120px; }
+  }
 }
 
 section {
@@ -245,3 +279,37 @@ section {
     }
   }
 }
+
+@import '../node_modules/tiny-slider/dist/tiny-slider.css';
+
+.tns-outer {
+  > .tns-nav,
+  > button[data-action="stop"], > button[data-action="start"],
+  > .tns-liveregion { display: none; }
+}
+
+@import '../node_modules/tingle.js/dist/tingle.css';
+
+.tingle-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tingle-modal-box {
+  border: 1px solid red;
+  // background-color: transparent;
+  width: 100%;
+  // height: 100%;
+  flex: 0 1 auto;
+  // min-height: auto !important;
+
+  @extend .cell-xs-12;
+  @extend .cell-sm-10;
+  @extend .cell-md-6;
+}
+
+.tingle-modal-box__content {
+  padding: ui(spacing);
+}
+
