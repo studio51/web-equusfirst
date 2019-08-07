@@ -1,0 +1,49 @@
+<div id="servicesForm">
+
+  <form method="POST" name="enquiry" data-netlify="true">
+    <div class="">
+      <div class="column">
+        <div class="cell-sm-auto">
+          <label>
+            <p class="-line-10 -margin-bottom_3 -x300">Your full name</p>
+
+            <input placeholder="Full Name" name="name" type="text" class="form-control" />
+          </label>
+        </div>
+
+        <div class="cell-sm-auto">
+          <label>
+            <p class="-line-10 -margin-bottom_3 -x300">Your Email Address</p>
+
+            <input placeholder="Email Address" name="email" type="email" class="form-control" />
+          </label>
+        </div>
+
+        <div class="cell-sm-auto -margin-top_2">
+          <label>
+            <p class="-line-10 -margin-bottom_3 -x300">Services you're interested in:</p>
+
+            <select name="service[]" multiple="true" class="form-control">
+              <option value="Full Biomechanical Assessment">Full Biomechanical Assessment</option>
+              <option value="Confidence Coaching">Confidence Coaching</option>
+              <option value="Mobility, Stability and Flexibility">Mobility, Stability and Flexibility</option>
+              <option value="Other Services">Other Services</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="cell-sm-auto">
+          <label>
+            <p class="-line-10 -margin-bottom_3 -x300">Any additional requests or questions here..</p>
+
+            <textarea name="information" rows="2" class="form-control" placeholder=""></textarea>
+          </label>
+        </div>
+      </div>
+    </form>
+
+    <div class="alert">
+      <p>Please note we don't store this information. We only use this information to easily compose the email on your behalf.</p>
+    </div>
+  </div>
+</div>
