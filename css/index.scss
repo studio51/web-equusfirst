@@ -7,16 +7,12 @@
   -webkit-overflow-scrolling: touch;
 }
 
-// * {
-//   transition-property: all;
-//   transition-duration: 1s;
-// }
-
 body {
   @include mq($from: 'xs') { background-color: color(white); }
   @include mq($from: 'sm') { background-color: color(gray, lighter); }
 
   font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
 
   h1, h2, h3, h4, h5, h6 { font-family: 'Darker Grotesque', sans-serif; }
 }
@@ -71,6 +67,7 @@ header {
     object-fit: cover;
     object-position: top 0;
     height: ui(spacing) * 13;
+    display: flex;
     z-index: 0;
     position: relative;
     top: 0;
@@ -109,7 +106,7 @@ header {
     background-color: color(yellow, light);
 
     @include mq($from: 'sm') {
-      left: -37px;
+      left: -39px;
 
       &::after {
         content: '';
@@ -121,21 +118,24 @@ header {
       }
     }
 
-    @include mq($from: 'md') { left: -28px; }
-    @include mq($from: 'lg') {  }
+    @include mq($from: 'md') { left: -29px; }
   }
 
   .shadow {
     &::before {
       left: 0;
-      top: 60px;
+      top: 38px;
       box-shadow: -5px 0 15px 1px color(yellow, darker);
+
+      @include mq($from: 'md') { top: 65px; }
     }
 
     &::after {
       right: 0;
-      top: -60px;
+      top: -40px;
       box-shadow: 5px 0 15px 1px color(yellow, darker);
+
+      @include mq($from: 'md') { top: -60px; }
     }
   }
 
@@ -143,28 +143,33 @@ header {
     @include mq($from: 'sm') {
       &:nth-child(1) { margin-top: 60px; }
       &:nth-child(2) { margin-top: 20px; }
-      &:nth-child(4) { margin-top: -60px; }
+      &:nth-child(4) { margin-top: -80px; }
     }
 
     @include mq($from: 'md') {
       &:nth-child(1) { margin-top: 80px; }
       &:nth-child(2) { margin-top: 50px; }
       &:nth-child(3) { margin-top: 20px; }
-      &:nth-child(4) { margin-top: -10px; }
+      &:nth-child(4) { margin-top: -20px; }
     }
 
     &-title {
-      @extend .-x600, .-orange, .-line-10, .-x-large;
+      @extend .-x700, .-orange, .-line-10;
       @extend .-margin-bottom_2;
     }
 
     &-options {
-      margin: 0;
+      margin: 0 0 0 3px;
 
       @extend .-padding-left_2;
-      @extend .-white, .-x500, .-line-11;
+      @extend .-white, .-x500, .-line-12;
 
       li + li { @extend .-margin-top_4; }
+    }
+
+    &-action {
+      @include mq($from: 'sm') { margin-bottom: -(ui(spacing) / 2); }
+      @include mq($from: 'md') { margin-top: 48px; }
     }
   }
 }
@@ -172,6 +177,7 @@ header {
 .wellbeing {
   @include mq($from: 'sm', $until: 'md') {
     padding-top: ui(spacing) * 2;
+    padding-bottom: ui(spacing) + (ui(spacing) / 2);
 
     .action { margin-bottom: -(ui(spacing)); }
   }
@@ -179,6 +185,7 @@ header {
   @include mq($from: 'md') {
     padding-top: ui(spacing) * 3;
     padding-bottom: 0;
+    margin-bottom: -(ui(spacing) / 2);
   }
 }
 
@@ -188,11 +195,11 @@ header {
   .background {
     left: -(ui(spacing));
     border-bottom-right-radius: ui(spacing);
-    background-color: color(blue);
+    background-color: color(blue, lighter);
 
     @include mq($from: 'sm') {
       top: 3px;
-      left: -23px;
+      left: -40px;
 
       &::before {
         content: '';
@@ -205,7 +212,7 @@ header {
     }
 
     @include mq($from: 'md') {
-      left: -60px;
+      left: -83px;
       top: 7.5px;
     }
   }
@@ -213,14 +220,18 @@ header {
   .shadow {
     &::before {
       left: 0;
-      top: 60px;
+      top: 41px;
       box-shadow: -5px 0 15px 1px darken(color(blue, darker), 5%);
+
+      @include mq($from: 'md') { top: 70px; }
     }
 
     &::after {
       right: 0;
-      top: -60px;
+      top: -37px;
       box-shadow: 5px 0 15px 1px darken(color(blue, darker), 5%);
+
+      @include mq($from: 'md') { top: -60px; }
     }
   }
 
@@ -245,6 +256,10 @@ header {
         bottom: -(ui(spacing) * 3.5);
       }
     }
+  }
+
+  @include mq($from: 'md') {
+    .slider-controls { top: calc(100% + #{ ui(spacing) / 2 }); }
   }
 
   + .clearfix {
@@ -297,19 +312,12 @@ section {
 }
 
 .tingle-modal-box {
-  border: 1px solid red;
-  // background-color: transparent;
   width: 100%;
-  // height: 100%;
   flex: 0 1 auto;
-  // min-height: auto !important;
 
   @extend .cell-xs-12;
   @extend .cell-sm-10;
   @extend .cell-md-6;
 }
 
-.tingle-modal-box__content {
-  padding: ui(spacing);
-}
-
+.tingle-modal-box__content { padding: ui(spacing); }

@@ -3,9 +3,11 @@ import EquusFirstServices from './services';
 
 import LazyLoad from 'vanilla-lazyload';
 
-new EquusFirstFeed();
-new EquusFirstServices();
+document.addEventListener('load', (event: any) => {
+  new EquusFirstFeed();
+  new EquusFirstServices();
 
-new LazyLoad({
-  elements_selector: '.lazy'
+  new LazyLoad({
+    elements_selector: '.lazy'
+  });
 });

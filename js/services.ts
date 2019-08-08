@@ -11,7 +11,7 @@ export default class EquusFirstServices {
 
   private async show() {
     var modal = new tingle.modal({
-      footer: true,
+      footer: false,
       stickyFooter: false,
       closeMethods: ['overlay', 'button', 'escape'],
       closeLabel: '',
@@ -33,9 +33,9 @@ export default class EquusFirstServices {
         // page.getElementsByTagName('body')[0];
 
         modal.setContent(html);
-        modal.addFooterBtn('Send', 'btn -green', () => {
-          window.open('mailto:test@example.com?subject=subject&body=');
-        });
+        // modal.addFooterBtn('Send', 'btn -green', () => {
+        //   window.open('mailto:test@example.com?subject=subject&body=');
+        // });
 
         modal.open();
       })

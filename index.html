@@ -55,19 +55,19 @@
 					<section class="about cell-sm-auto" id="about">
 						<h1 class="-x500 -line-10 -uppercase">Welcome to EquusFirst</h1>
 
-						<p class="-x300 -margin-top_2">
+						<p class="-x300 -line-12 -margin-top_2">
 							Whether your goal is to hack safely, improve your riding, take part in fun rides
 							or compete in any discipline: I provide an enthusiastic, sympathetic and knowledgeable
 							approach.
 						</p>
 
-						<p class="-x300 -margin-top_2">
+						<p class="-x300 -line-12 -margin-top_2">
 							I use simple methods to teach all levels of riders and horses, allowing you to develop
 							an understanding rather than simply be instructed. In doing so, my pupils grow in
 							confidence as they increase their own knowledge.
 						</p>
 
-						<p class="-x300 -margin-top_2">Below you will find a list of Services I offer to benefit you and your horse!</p>
+						<p class="-x300 -margin-top_2">Below you will find a list of <strong>Services</strong> I offer to benefit you and your horse!</p>
 					</section>
 
 					<section class="cell-sm-auto services" id="services">
@@ -115,10 +115,10 @@
 							</div>
 						</div>
 
-						<div class="row align-left -margin-top">
+						<div class="row align-left -margin-xs-top -margin-sm-top_4 service-action">
 							<div class="cell-sm-auto">
 								<a id="servicesForm" href="" class="btn -medium -yellow -solid -darker -round">
-									<span class="-x700 -white">Book Now</span>
+									<span class="-x700 -white">Enquire</span>
 								</a>
 							</div>
 						</div>
@@ -157,8 +157,8 @@
 							</div>
 						</div>
 
-						<h2 class="-line-10 -x500 -white -margin-top -margin-bottom">
-							Latest posts and testimonials from our <span class="-x700">Facebook</span> Page
+						<h2 class="-line-10 -x700 -blue -margin-top -margin-bottom">
+							Latest posts and testimonials from our <strong class="-x900">Facebook</strong> Page
 						</h2>
 
 						<div class="slider-container">
@@ -178,41 +178,6 @@
 								</div>
 							</div>
 						</div>
-
-						<template id="feedPost">
-							<div>
-								<div class="row align-middle">
-									<div class="cell-sm-auto -margin-right_2">
-										<img class="feed-post-image -x10 -equal -rounded" data-src="img/1x1.png" alt="" />
-									</div>
-
-									<div class="cell-sm">
-										<p class="feed-post-content -white -x400"></p>
-									</div>
-								</div>
-							</div>
-						</template>
-
-						<template id="testimonialPost">
-							<div class="row testimonial">
-								<div class="cell-sm-auto">
-									<div class="row -margin-bottom_2">
-										<div class="cell-sm">
-											<h1 class="-x500 -white -line-10">
-												<span class="testimonial-post-author"></span>
-												<span class="testimonial-post-source -x500 -medium"></span>
-											</h1>
-										</div>
-
-										<div class="cell-sm-auto">
-											<i class="testimonial-post-date -x400 -white -small -line-10"></i>
-										</div>
-									</div>
-
-									<div class="testimonial-post-content"></div>
-								</div>
-							</div>
-						</template>
 					</section>
 
 					<div class="hidden-xs clearfix"></div>
@@ -221,14 +186,49 @@
 		</div>
 
 		<footer class="-padding" id="contact">
-			<p class="-center -line-10 -x500">&copy; Copyright 2019, EquusFirst. All Rights reserved.</p>
-			<p class="-center -line-10 -x400 -small -margin-top_3">
+			<p class="-center -line-10 -x400 -medium">&copy; Copyright 2019, EquusFirst. All Rights reserved.</p>
+			<p class="-center -line-10 -x300 -small -margin-top_3">
 				Design &amp; Website by <a class="-reset -blue -x500" href="https://studio51.solutions">Studio51 Solutions</a>
 			</p>
 		</footer>
 
 		<script src="js/index.ts"></script>
 	</body>
+
+	<template id="feedPost">
+		<div>
+			<div class="row align-middle">
+				<div class="cell-sm-auto -margin-right_2">
+					<img class="feed-post-image -x10 -equal -rounded" data-src="img/1x1.png" alt="" />
+				</div>
+
+				<div class="cell-sm">
+					<p class="feed-post-content -white -x400"></p>
+				</div>
+			</div>
+		</div>
+	</template>
+
+	<template id="testimonialPost">
+		<div class="row testimonial">
+			<div class="cell-sm-auto">
+				<div class="row -margin-bottom_2">
+					<div class="cell-sm">
+						<h3 class="-x600 -white -line-10">
+							<span class="testimonial-post-author"></span>
+							<span class="testimonial-post-source -x500 -medium"></span>
+						</h3>
+					</div>
+
+					<div class="cell-sm-auto">
+						<i class="testimonial-post-date -x400 -white -small -line-10"></i>
+					</div>
+				</div>
+
+				<div class="testimonial-post-content"></div>
+			</div>
+		</div>
+	</template>
 
 	<div id="fb-root"></div>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v4.0&appId=1245264632308266&autoLogAppEvents=1"></script>

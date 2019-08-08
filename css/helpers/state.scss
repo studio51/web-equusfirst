@@ -1,0 +1,26 @@
+.-pointer { cursor: pointer; }
+
+.-hidden { display: none; }
+.-invisible {
+  visibility: hidden;
+  height: 0;
+}
+
+[hidden], [data-hidden='true'] { @extend .-hidden; }
+[invisible], [data-invisible='true'] { @extend .-invisible; }
+
+a[hidden] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.-show-on-hover {
+  &_parent {
+    &:hover {
+      .-show-on-hover_child { visibility: visible; }
+    }
+  }
+
+  &_child:not(.selected) { visibility: hidden; }
+}
