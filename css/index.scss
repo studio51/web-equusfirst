@@ -154,7 +154,7 @@ header {
     }
 
     &-title {
-      @extend .-x700, .-orange, .-line-10;
+      @extend .-x600, .-orange, .-line-10;
       @extend .-margin-bottom_2;
     }
 
@@ -195,7 +195,7 @@ header {
   .background {
     left: -(ui(spacing));
     border-bottom-right-radius: ui(spacing);
-    background-color: color(blue, lighter);
+    background-color: color(blue);
 
     @include mq($from: 'sm') {
       top: 3px;
@@ -212,7 +212,7 @@ header {
     }
 
     @include mq($from: 'md') {
-      left: -83px;
+      left: -73px;
       top: 7.5px;
     }
   }
