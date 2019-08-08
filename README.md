@@ -1,7 +1,7 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/fa018e30-91fa-4ba1-8c46-6f0eb3b76fa8/deploy-status)](https://app.netlify.com/sites/equusfirst/deploys)
-
 ### EquusFirst
 ###### Be the Rider your Horse would choose!
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fa018e30-91fa-4ba1-8c46-6f0eb3b76fa8/deploy-status)](https://app.netlify.com/sites/equusfirst/deploys)
 
 Whether your goal is to hack safely, improve your riding, take part in fun rides
 or compete in any discipline: I provide an enthusiastic, sympathetic and knowledgeable
