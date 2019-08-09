@@ -7,9 +7,10 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="UKCC L2 - Fully Insured - BSD - First Aid - BSc(Hons) Equine Science, Freelance Ridding Instructor, Horse, Equestrian, Equine, Coach, Equine Science">
+		<meta name="description" content="UKCC L2 - Fully Insured - DBS - First Aid - BSc(Hons) Equine Science, Freelance Ridding Instructor, Coach, Equine Science">
+		<meta name="keywords" content="riding coach, riding instructor, equine science, biomechanics, rider alignment" />
 
- 		<title>EquusFirst | Freelance Ridding Instructor, Horse, Equestrian, Equine, Coach, Equine Science</title>
+ 		<title>EquusFirst | Freelance Riding Instructor, Equine Science, Biomechanics</title>
 
 		<link rel="stylesheet" href="css/index.scss" type="text/css" />
 	</head>
@@ -47,7 +48,7 @@
 							<img class="-x15" src="img/logo.svg" alt="EquusFirst Logo" />
 
 							<h1 class="-center -white -x-large -x500 -margin-top">
-								UKCC L2 - Fully Insured - BSD - First Aid - BSc(Hons) Equine Science
+								UKCC L2 - Fully Insured - DBS - First Aid - BSc(Hons) Equine Science
 							</h1>
 						</section>
 					</div>
@@ -74,6 +75,7 @@
 						<div class="background"></div>
 						<div class="shadow"></div>
 
+						
 						<div class="display-grid -gap-32 -columns-xs-1 -columns-sm-2 -columns-md-4">
 							<div class="service">
 								<h1 class="service-title">Full Biomechanical Assessment</h1>
@@ -89,6 +91,7 @@
 								<h1 class="service-title">Mobility, Stability and Flexibility</h1>
 
 								<ul class="service-options">
+									<li>Horse and Rider <strong>90 minutes</strong> - <strong>£60.00</strong></li>
 									<li>Horse only <strong>45 minutes</strong> - <strong>£35.00</strong></li>
 									<li>Rider only <strong>30</strong> or <strong>45 minutes</strong> - <strong>£20.00</strong> or <strong>£30.00</strong></li>
 								</ul>
@@ -109,8 +112,9 @@
 								<ul class="service-options">
 									<li>Core Strength Workshop Rider only <strong>35 minutes</strong> - <strong>£20.00</strong></li>
 									<li>1-2-1 tailored dismounted session with personalised plan - <strong>£25.00</strong></li>
-									<li>Fancy Footwork Clinics ( 4+ riders ) - <strong>£25.00</strong></li>
-									<li>Massage Horse or Rider; prices available on request</li>
+									<li>Fancy Footwork Clinics (4+ riders) - <strong>£25.00</strong></li>
+									<li>Massage Horse - <strong>£10.00</strong> (with another service)</li>
+									<li>Rider Massage <strong>30</strong> or <strong>60 minutes</strong> - <strong>£15.00</strong> or <strong>£25.00</strong></li>
 								</ul>
 							</div>
 						</div>
@@ -195,40 +199,42 @@
 
 		<script src="js/index.ts"></script>
 		<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v4.0&appId=1245264632308266&autoLogAppEvents=1"></script>
-	</body>
 
-	<template id="feedPost">
-		<div>
-			<div class="row align-middle">
-				<div class="cell-sm-auto -margin-right_2">
-					<img class="feed-post-image -x10 -equal -rounded" data-src="img/1x1.png" alt="" />
-				</div>
+		<script id="feedTemplate" type="x-tmpl-mustache">
+			<div>
+				<div class="row align-middle">
+					{{ #images }}
+						<div class="cell-sm-auto -margin-right_2">
+							<img class="feed-post-image -x10 -equal -rounded" data-src="{{ images[0].url }}" alt="" />
+						</div>
+					{{ /images }}
 
-				<div class="cell-sm">
-					<p class="feed-post-content -white -x400"></p>
-				</div>
-			</div>
-		</div>
-	</template>
-
-	<template id="testimonialPost">
-		<div class="row testimonial">
-			<div class="cell-sm-auto">
-				<div class="row -margin-bottom_2">
 					<div class="cell-sm">
-						<h3 class="-x600 -white -line-10">
-							<span class="testimonial-post-author"></span>
-							<span class="testimonial-post-source -x500 -medium"></span>
-						</h3>
-					</div>
-
-					<div class="cell-sm-auto">
-						<i class="testimonial-post-date -x400 -white -small -line-10"></i>
+						<p class="feed-post-content -white -x400">{{ message }}</p>
 					</div>
 				</div>
-
-				<div class="testimonial-post-content"></div>
 			</div>
-		</div>
-	</template>
+		</script>
+
+		<script id="testimonialTemplate" type="x-tmpl-mustache">
+			<div class="row testimonial">
+				<div class="cell-sm-auto">
+					<div class="row -margin-bottom_2">
+						<div class="cell-sm">
+							<h3 class="-x600 -white -line-10">
+								<span class="testimonial-post-author">{{ author }}</span>
+								<span class="testimonial-post-source -x500 -medium">on {{ source }}</span>
+							</h3>
+						</div>
+
+						<div class="cell-sm-auto">
+							<i class="testimonial-post-date -x400 -white -small -line-10">{{ date }}</i>
+						</div>
+					</div>
+
+					<div class="testimonial-post-content">{{ message }}</div>
+				</div>
+			</div>
+		</script>
+	</body>
 </html>

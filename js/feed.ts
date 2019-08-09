@@ -4,6 +4,7 @@ import Testimonial from './interface/testimonial.interface';
 import * as Cheerio from 'cheerio';
 import Axios, { AxiosResponse } from 'axios';
 import { tns } from 'tiny-slider/src/tiny-slider';
+import Mustache from 'mustache';
 
 const html = async () => {
   const result: AxiosResponse = await Axios.get(
@@ -27,6 +28,8 @@ export default class EquusFirstScrapper {
   testimonials: Testimonial[] = [];
 
   feed: any[] = [];
+
+  parser: DOMParser = new DOMParser();
 
   constructor() {
     this.testimonials = [
@@ -58,7 +61,7 @@ export default class EquusFirstScrapper {
         author: 'Jo Latham',
         date: 'September 8th, 2014',
         message: `
-          <p>Today I and my 17.3 5yr old shire made had a lesson from Emma and I have to say I am over the moon and re motivated.</p>
+          <p>Today I and my 17.3 5yr old shire mare had a lesson from Emma and I have to say I am over the moon and re motivated.</p>
           <p>Emma and I have been co-workers in the past and friends for a number of years so I thought this may have affected the way she approached teaching me and of course the way I took things on board. But I am very pleased to say that once in side the arena we both managed to leave our personal friendship behind the closed gate. </p>
           <p>Emma was very professional and explained everything in a scientific but very easy way to understand and I feel that bess and I achieved a great deal in the hour! I will definitely be making this a regular occurrence from now on.</p>
           <p>Thank you Emma!!!</p>
@@ -108,25 +111,18 @@ export default class EquusFirstScrapper {
   private show() {
     if ('content' in document.createElement('template')) {
       this.feed.forEach((post: any) => {
-        const postType: string = post.type;
+        const template: any = document.querySelector(`#${ post.type }Template`).innerHTML;
+        const content: any  = document.querySelector('#feedContent');
 
-        const template: any    = document.querySelector(`#${ postType }Post`);
-        const feedContent: any = document.querySelector('#feedContent');
-        const postClone: any   = document.importNode(template.content, true);
+        Mustache.parse(template);
 
-        if (postType === 'testimonial') {
-          postClone.querySelector(`.testimonial-post-author`).innerHTML = post.author;
-          postClone.querySelector(`.testimonial-post-source`).innerHTML = `on ${ post.source }`;
-          postClone.querySelector(`.testimonial-post-date`).innerHTML = post.date;
-        }
+        const page: any = this.parser
+          .parseFromString(
+            Mustache.render(template, post),
+            'text/html'
+          );
 
-        // if (post.type === 'post' && post.images.length > 0) {
-        //   postClone.querySelector('.feed-post-image').src = post.images[0].url;
-        // }
-
-        postClone.querySelector(`.${ postType }-post-content`).innerHTML = post.message;
-
-        feedContent.appendChild(postClone);
+        content.appendChild(page.body.children[0]);
       });
 
       this.createCarousel();
@@ -142,7 +138,7 @@ export default class EquusFirstScrapper {
       speed: 2500,
       gutter: 32,
       slideBy: 'page',
-      autoplay: false,
+      autoplay: true,
       rewind: true,
       autoHeight: true
     });
