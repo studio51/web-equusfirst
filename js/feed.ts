@@ -2,20 +2,14 @@ import Post from './interface/post.interface';
 import Testimonial from './interface/testimonial.interface';
 
 import * as Cheerio from 'cheerio';
-import Axios, { AxiosResponse } from 'axios';
-import { tns } from 'tiny-slider/src/tiny-slider';
 import Mustache from 'mustache';
+import { tns } from 'tiny-slider/src/tiny-slider';
 
 const html = async () => {
-  const result: AxiosResponse = await Axios.get(
-    'https://cors-anywhere.herokuapp.com/https://www.facebook.com/pg/equusfirst/posts/',
-    {
-      headers: {
-        'Access-Control-Allow-Origin': '*'
-      }
-    });
+  const res: any  = await fetch('https://cors-anywhere.herokuapp.com/https://www.facebook.com/pg/equusfirst/posts/');
+  const html: any = await res.text();
 
-  return Cheerio.load(result.data, {
+  return Cheerio.load(html, {
     withDomLvl1: true,
     normalizeWhitespace: true,
     xmlMode: true,
@@ -109,24 +103,22 @@ export default class EquusFirstScrapper {
   }
 
   private show() {
-    if ('content' in document.createElement('template')) {
-      this.feed.forEach((post: any) => {
-        const template: any = document.querySelector(`#${ post.type }Template`).innerHTML;
-        const content: any  = document.querySelector('#feedContent');
+    this.feed.forEach((post: any) => {
+      const template: any = document.querySelector(`#${ post.type }Template`).innerHTML;
+      const content: any  = document.querySelector('#feedContent');
 
-        Mustache.parse(template);
+      Mustache.parse(template);
 
-        const page: any = this.parser
-          .parseFromString(
-            Mustache.render(template, post),
-            'text/html'
-          );
+      const page: any = this.parser
+        .parseFromString(
+          Mustache.render(template, post),
+          'text/html'
+        );
 
-        content.appendChild(page.body.children[0]);
-      });
+      content.appendChild(page.body.children[0]);
+    });
 
-      this.createCarousel();
-    }
+    this.createCarousel();
   }
 
   private createCarousel() {

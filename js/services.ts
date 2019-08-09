@@ -8,7 +8,10 @@ export default class EquusFirstServices {
     })
   }
 
-  private create() {
+  private async create() {
+    const res: any  = await fetch(document.getElementsByTagName('link')[0].href);
+    const html: any = await res.text();
+
     const modal: tingle.modal = new tingle.modal({
       closeMethods: ['overlay', 'button', 'escape'],
 
@@ -17,11 +20,7 @@ export default class EquusFirstServices {
       }
     });
 
-    fetch(document.getElementsByTagName('link')[0].href)
-      .then((res: any) => res.text())
-      .then((html: any) => {
-        modal.setContent(html);
-        modal.open();
-      });
+    modal.setContent(html);
+    modal.open();
   }
 }
