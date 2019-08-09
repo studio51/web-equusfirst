@@ -7,7 +7,6 @@
   textarea {
     appearance: none;
     -webkit-appearance: none;
-    
   }
 
   textarea {
@@ -56,9 +55,6 @@
 
     option {
       @extend .-padding_2;
-
-      border: 1px solid red;
-      
     }
   }
 }
